@@ -92,7 +92,37 @@ footer{background:var(--ink);color:rgba(244,239,228,.38);padding:2.4rem 3rem;dis
   .author-grid{grid-template-columns:1fr;gap:2rem}.chapters-grid{grid-template-columns:1fr}
   footer{flex-direction:column;gap:1.4rem;text-align:center}
 }
-@media(max-width:580px){h1{font-size:2.9rem}.chapter-card{padding:1.2rem}}
+@media(max-width:580px){
+  h1{font-size:2.5rem}
+  .chapter-card{padding:1.2rem}
+  /* MÓVIL: hero en dos columnas compactas — título izq, portada dcha */
+  .hero{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:auto;
+    min-height:100vh;
+    padding:5.5rem 0 2rem;
+    align-items:center;
+  }
+  .hero::after{display:block;width:50%}
+  .hero-text{
+    padding:0 1rem 0 1.2rem;
+    grid-column:1;
+  }
+  .hero-visual{
+    padding:0.5rem 1rem 0.5rem 0.5rem;
+    grid-column:2;
+  }
+  .book-cover{
+    width:min(130px,90%);
+    box-shadow:0 12px 30px rgba(26,23,20,.22),0 3px 10px rgba(26,23,20,.12);
+  }
+  .book-cover-wrap::after{display:none}
+  .subtitle{font-size:1rem;margin-bottom:1.2rem}
+  .author-line{margin-bottom:1.4rem;font-size:0.72rem}
+  .cta-group{gap:1rem}
+  .btn-primary{padding:.7rem 1.2rem;font-size:.78rem}
+  .btn-secondary{display:none}
+}
 </style>
 </head>
 <body>
